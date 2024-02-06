@@ -1,0 +1,19 @@
+body {
+    font-size: large;
+    text-align: center;
+    /* width: 80vw; */
+}
+table {
+    max-width: 100%;
+}
+table, th, td {
+    text-align: start;
+    border-collapse: collapse;
+    border: 2px solid black;
+    
+}
+
+thead {
+    text-align: left;
+    font-weight: bold;
+}
