@@ -1,0 +1,13 @@
+table {
+    max-width: 70vw;
+    padding: 10px;
+}
+
+#soumettre {
+    text-align: end;
+}
+
+tr,
+td {
+    padding: 5px;
+}
