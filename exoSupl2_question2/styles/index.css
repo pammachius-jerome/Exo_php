@@ -1,0 +1,19 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+fieldset {
+    margin-top: 50px;
+    max-width: 90vw;
+}
+
+form * {
+    padding: 5px;
+    margin: 10px 0px;
+    font-size: larger;
+    font-weight: bold;
+}
