@@ -24,19 +24,39 @@ session_start();
             <input type="submit" value="envoyer">
     </fieldset>
     </form>
-<?php
-if (!empty($_POST['motDePasse']) && !empty($_POST['mail'])) {
+    <?php
+    $acces = [
+        ["email" => "jean_valjean@academie.net", "mdp" => "hugo"], [
+            "email" => "steve_ostin@lesseries.org",
+            "mdp" => "3md"
+        ], ["email" => "david_banner@marvel.com", "mdp" => "hulk"]
+    ];
 
-    $_SESSION["mail"] = $_POST["mail"];
-    $_SESSION["motDePasse"] = $_POST["motDePasse"];
-    // print_r($_SESSION["mail"]);
-    // var_dump($_SESSION["motDePasse"]);
-    if (($_SESSION["mail"] === "jean_valjean@academie.net" OR $_SESSION["mail"] === "steve_ostin@lesseries.org" OR $_SESSION["mail"] === "david_banner@marvel.com") && ($_SESSION["motDePasse"] === "hugo" OR $_SESSION["motDePasse"] === "hulk" OR $_SESSION["motDePasse"] === "3md"))
-    echo "Formulaire soumis avec succès !";
-}else {
-    echo "Saisie obligatoire";
-};
-?>
+    function verification($mail, $motDePasse, $acces)
+    {
+        foreach ($acces as $utilisateur) {
+            if ($utilisateur["email"] === $mail && $utilisateur["mdp"] === $motDePasse) {
+                return true;
+            };
+        };
+        return false;
+    };
+
+    $cookiTest = "test de cooki";
+    setcookie("testCookie", $cookiTest, time() + 3600);
+    if (!empty($_POST['motDePasse']) && !empty($_POST['mail'])) {
+        $mail = $_POST["mail"];
+        $motDePasse = $_POST["motDePasse"];
+        if (verification($mail, $motDePasse, $acces)) {
+            header("location:form2.php");
+        } else {
+            echo "Mot de passe incorrect";
+        }
+    } else {
+        echo "Saisie obligatoire";
+    };
+
+    ?>
 </body>
 
 </html>
