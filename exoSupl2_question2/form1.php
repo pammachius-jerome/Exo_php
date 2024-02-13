@@ -44,6 +44,7 @@ session_start();
 
     $cookiTest = "test de cooki";
     setcookie("testCookie", $cookiTest, time() + 3600);
+   
     if (!empty($_POST['motDePasse']) && !empty($_POST['mail'])) {
         $mail = $_POST["mail"];
         $motDePasse = $_POST["motDePasse"];
