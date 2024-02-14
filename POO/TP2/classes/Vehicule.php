@@ -1,18 +1,18 @@
 <?php
 
-class Vehicule
+abstract class Vehicule
 {
     // propriété
     /**
      * marque du véhilcule
-     * @var string
+     * @var string $marque
      */
-    public $marque;
+    private $marque;
     /**
      * modèle de voiture 
      * @var string
      */
-    public $modele;
+    private $modele;
 
     // méthodes
     /**
@@ -26,17 +26,22 @@ class Vehicule
         $this->modele = $modele;
     }
 
-    public function demarrer()
-    {
-    }
+    abstract public function demarrer();
 
-    public function arreter()
-    {
-    }
+
+    abstract public function arreter();
+
     /**
      * 
      */
-    public function faireLePlein()
-    {
-    }
+    abstract public function faireLePlein();
+};
+
+abstract class VehiculeAMoteur extends Vehicule
+{
+    // propriété
+    /**
+     * 
+     */
+    private $moteur;
 };

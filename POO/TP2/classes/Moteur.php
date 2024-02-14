@@ -76,11 +76,16 @@ class Moteur
         }
         return $volumeReservoir;
     }
-
+/**
+ * effectuer le plein de carburant
+ * 
+ */
     public function faireLePlein($carburant, $volumeReservoir, $volumeTotal)
     {
         echo "Il reste  litre de carburant";
-        $volumeReservoir = 
+        $volumeReservoir += $carburant;
+        $volumeTotal += $carburant;
+        echo "Plein effectué avec " . $carburant . " litres. <br>";
     }
 
     public function arreter()
