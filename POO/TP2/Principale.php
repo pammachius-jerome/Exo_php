@@ -7,6 +7,11 @@
     <title>TP 2 : ParcAuto</title>
 </head>
 <body>
-    
+    <?php
+    require_once 'classes/Vehicule.php';
+
+    // vérification du constructeur
+    $voitureTest = new Vehicule("Opel", "Corsa");
+    ?>
 </body>
 </html>

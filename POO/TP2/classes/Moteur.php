@@ -2,34 +2,35 @@
 class Moteur
 {
     // propriété
+    
     /**
      * le nombre actuel de litres dans le réservoir
      * @var float
      */
-    public $volumeReservoir;
+    private $volumeReservoir;
     /**
      * le nombre total de litres que le moteur a reçu au fil des pleins effectués
      * @var float
      */
-    public $volumeTotal;
+    private $volumeTotal;
     /**
      *  précise si le moteur tourne ou non
      * @var bool
      */
-    public $demarre;
+    private $demarre;
     /**
      * le volume nécessaire pour faire le trajet demander
      * @var float
      */
-    public $volumeNecessaire;
+    private $volumeNecessaire;
     /**
      * volume de carburant nécessaire pour faire le plein
      * @var float
      */
-    public $carburant;
+    private $carburant;
 
     // méthodes
-
+    
     public function volumeReservoir()
     {
         return $this->volumeReservoir;
@@ -60,6 +61,8 @@ class Moteur
     }
     /**
      * faire un trajet et consomme du carburant
+     * @param float $volumeNecessaire le volume nécessaire pour faire le trajet demander
+     * @param float $volumeReservoir le nombre actuel de litres dans le réservoir
      * @return float
      */
     public function utiliser($volumeNecessaire, $volumeReservoir)
@@ -78,13 +81,14 @@ class Moteur
     }
 /**
  * effectuer le plein de carburant
- * 
+ * @param float $carburant volume de carburant nécessaire pour faire le plein
+ * @return null
  */
-    public function faireLePlein($carburant, $volumeReservoir, $volumeTotal)
+    public function faireLePlein($carburant)
     {
-        echo "Il reste  litre de carburant";
-        $volumeReservoir += $carburant;
-        $volumeTotal += $carburant;
+        echo "Il reste " . $this->volumeReservoir . " litre de carburant";
+        $this->volumeReservoir += $carburant;
+        $this->volumeTotal += $carburant;
         echo "Plein effectué avec " . $carburant . " litres. <br>";
     }
 

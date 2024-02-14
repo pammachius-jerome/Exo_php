@@ -54,7 +54,7 @@ class Voiture
 
     // Méthodes
     /**
-     * constructeur de l'objet Vehicule
+     * constructeur de l'objet Voiture
      * @param string $immatriculation
      * @param string $couleur
      * @param int $poids
