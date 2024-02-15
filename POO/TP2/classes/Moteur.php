@@ -1,21 +1,22 @@
 <?php
+
 class Moteur
 {
     // propriété
     
     /**
      * le nombre actuel de litres dans le réservoir
-     * @var float
+     * @var float $volumeReservoir
      */
     private $volumeReservoir;
     /**
      * le nombre total de litres que le moteur a reçu au fil des pleins effectués
-     * @var float
+     * @var float $volumeTotal
      */
     private $volumeTotal;
     /**
      *  précise si le moteur tourne ou non
-     * @var bool
+     * @var bool $demarre
      */
     private $demarre;
     /**
@@ -31,29 +32,38 @@ class Moteur
 
     // méthodes
     
-    public function volumeReservoir()
+    // GETTERS accesseur
+    /**
+     * @return float
+     */
+    public function getVolumeReservoir()
     {
         return $this->volumeReservoir;
     }
-
-    public function volumeTotal()
+    /**
+     * @return float
+     */
+    public function getVolumeTotal()
     {
         return $this->volumeTotal;
     }
-
-    public function demarre()
+    /**
+     * @return bool
+     */
+    public function getDemarre()
     {
         return $this->demarre;
     }
+
     /**
      * on démarre le moteur si c'est possible
      * @return bool
      */
-    public function demarrer($volumeReservoir)
+    public function demarrer():bool
     {
         echo "je démarre le moteur";
-        if ($volumeReservoir > 0) {
-            $volumeReservoir -= 0.1;
+        if ($this->volumeReservoir > 0.1) {
+            $this->volumeReservoir -= 0.1;
             return true;
         } else {
             return false;
@@ -62,22 +72,21 @@ class Moteur
     /**
      * faire un trajet et consomme du carburant
      * @param float $volumeNecessaire le volume nécessaire pour faire le trajet demander
-     * @param float $volumeReservoir le nombre actuel de litres dans le réservoir
-     * @return float
+     * @return float $volumeReservoir après la consomation du trajet
      */
-    public function utiliser($volumeNecessaire, $volumeReservoir)
+    public function utiliser($volumeNecessaire)
     {
-        if ($volumeReservoir >= $volumeNecessaire) {
+        if ($this->volumeReservoir >= $volumeNecessaire) {
             echo "le moteur utilise $volumeNecessaire L. <br>";
-            $volumeReservoir -= $volumeNecessaire;
-            echo "Il reste $volumeReservoir L. <br>";
+            $this->volumeReservoir -= $volumeNecessaire;
+            echo "Il reste $this->volumeReservoir L. <br>";
         }else {
-            $volumeNecessaire = $volumeReservoir;
+            $volumeNecessaire = $this->volumeReservoir;
             echo "le moteur utilise $volumeNecessaire L. <br>";
-            $volumeReservoir = 0;
-            echo "Il reste $volumeReservoir L. <br>";
+            $this->volumeReservoir = 0;
+            echo "Il reste $this->volumeReservoir L. <br>";
         }
-        return $volumeReservoir;
+        return $this->volumeReservoir;
     }
 /**
  * effectuer le plein de carburant

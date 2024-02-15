@@ -14,6 +14,8 @@ abstract class Vehicule
      */
     private $modele;
 
+
+
     // méthodes
     /**
      * constructeur de l'objet Vehicule
@@ -25,23 +27,20 @@ abstract class Vehicule
         $this->marque = $marque;
         $this->modele = $modele;
     }
-
+    /**
+     * @return bool opération réussi ou non
+     */
     abstract public function demarrer();
 
-
+    /**
+     * @return null
+     */
     abstract public function arreter();
 
     /**
-     * 
+     * @param float 
+     * @return null
      */
-    abstract public function faireLePlein();
+    abstract public function faireLePlein(float $volumeComplement);
 };
 
-abstract class VehiculeAMoteur extends Vehicule
-{
-    // propriété
-    /**
-     * 
-     */
-    private $moteur;
-};

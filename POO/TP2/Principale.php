@@ -8,10 +8,16 @@
 </head>
 <body>
     <?php
-    require_once 'classes/Vehicule.php';
+
+use App\Autoloader;
+
+    require_once 'classes/Autoloader.php';
+    Autoloader::register();
 
     // vérification du constructeur
-    $voitureTest = new Vehicule("Opel", "Corsa");
+    // $voitureTest = new Vehicule("Opel", "Corsa");
+    // var_dump($voitureTest);
+
     ?>
 </body>
 </html>

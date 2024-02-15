@@ -10,6 +10,7 @@
 
 <body>
     <?php
+    // on instanci Voiture
     require_once 'Voiture.php';
     
     //vérification du fonctionnement du constructeur
