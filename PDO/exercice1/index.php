@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,7 +13,7 @@
 
 <body>
     <h1>Formulaire de contact</h1>
-    <form method="POST">
+    <form action="includes/Contact.php" method="POST">
         <div>
             <label for="nom">nom</label>
             <input type="text" name="nom" id="nom" required>
@@ -37,8 +40,8 @@
     require_once 'includes/PHPMailer/SMTP.php';
     
     require_once 'includes/connexion.php';
-    require_once 'Contact.php';
-
+    require_once 'includes/Contact.php';
+    
     ?>
 </body>
 

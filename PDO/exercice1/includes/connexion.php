@@ -25,7 +25,7 @@ try{
     // var_dump($user[0][4]);
     // echo "</pre>";
 
-    //ajouter un enregistrement (tuple)
+    // ajouter un enregistrement (tuple)
     // $sql = "INSERT INTO contacts(`nom`, `prenom`, `mail`, `message`) VALUES ('Durant', 'Paul', 'paul@mail.fr', 'message de paul')";
     // $requete = $db->query($sql);
 

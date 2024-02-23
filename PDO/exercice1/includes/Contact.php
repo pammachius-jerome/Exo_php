@@ -134,16 +134,32 @@ class Contact
     }
 
  
-
-    private function controle ()
+    /**
+     * fonction de contr$ole de validation du formulaire
+     *
+     * @return void
+     */
+    public function controle()
     {
-        if (!empty($_POST["nom"])){
+        if (!empty($_POST["nom"]) && !empty($_POST["prenom"]) && !empty($_POST["mail"]) && !empty($_POST["message"])){
+
             $this->nom = strip_tags($_POST["nom"]);
-            var_dump($this->nom);
+            // var_dump($this->nom);
+            $this->prenom = strip_tags(($_POST["prenom"]));
+            $this->mail = strip_tags($_POST["mail"]);
+            // var_dump($this->mail);
+            $this->message = strip_tags($_POST["message"]);
+            var_dump($this->message);
         }else{
             die("une erreur est survenue");
         }
 
     }
-    
 }
+
+$utilisateur = new Contact($_POST["nom"], $_POST["prenom"], $_POST["mail"], $_POST["message"]);
+
+// echo $utilisateur-> getNom();
+
+$utilisateur->controle();
+?>
