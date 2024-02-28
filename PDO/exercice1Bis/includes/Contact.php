@@ -1,6 +1,4 @@
 <?php
-@session_start();
-
 class Contact
 {
     // Propriété
@@ -141,11 +139,6 @@ class Contact
             $this->prenom = strip_tags(($_POST["prenom"]));
             $this->mail = strip_tags($_POST["mail"]);
             $this->message = strip_tags($_POST["message"]);
-            // On stock les valeurs netoyer du formulaire dans $_SESSION
-            $_SESSION["nom"] =  $this->nom;
-            $_SESSION["prenom"] = $this->prenom;
-            $_SESSION["mail"] = $this->mail;
-            $_SESSION["message"] = $this->message;
             // on lance la connection à la BDD
             $this->connection();
         } else {

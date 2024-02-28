@@ -1,20 +1,16 @@
 <?php
-session_start();
-
-
 // On charge la librairie de PHPMailer
-// require_once 'includes/PHPMailer/Exception.php';
-// require_once 'includes/PHPMailer/PHPMailer.php';
-// require_once 'includes/PHPMailer/SMTP.php';
+require_once 'includes/PHPMailer/Exception.php';
+require_once 'includes/PHPMailer/PHPMailer.php';
+require_once 'includes/PHPMailer/SMTP.php';
 
 require_once 'includes/Contact.php';
 
 if (!empty($_POST)) {
     $utilisateur = new Contact();
     $utilisateur->controle();
-    require_once '../exercice1/includes/envoieMail.php';
     $db = NULL;
-    // header ('location:http://localhost/dev_projet/Exo/PDO/exercice1//includes/envoi.php');
+    header ('location:http://localhost/dev_projet/Exo/PDO/exercice1//includes/envoi.php');
 
 }
 

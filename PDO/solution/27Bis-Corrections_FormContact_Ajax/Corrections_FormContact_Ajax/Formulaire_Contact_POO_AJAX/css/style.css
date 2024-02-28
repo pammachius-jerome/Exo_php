@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(41, 43, 46);
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+.error{
+    color: rgb(190, 45, 45);
+}
+
+.success{
+    color: greenyellow;
+}
