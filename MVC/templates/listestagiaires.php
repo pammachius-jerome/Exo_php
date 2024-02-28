@@ -9,6 +9,7 @@ ob_start();
             <th> Prénom Membre </th>
             <th> Nom Membre </th>
             <th> Suppression </th>
+            <th> Modifier </th>
         </tr>
         <?php
             foreach($stagiaires as $stagiaire){
@@ -17,6 +18,7 @@ ob_start();
                 echo "<td> $stagiaire[login_membre] </td>";
                 echo "<td> $stagiaire[nom_membre] </td>";
                 echo "<td class='colsuppr'><a href=index.php?action=suppr&id=$stagiaire[id_membre]>Supprimer</a></td>";
+                echo "<td class='colmodif'><a href=index.php?action=vue_modifier&id=$stagiaire[id_membre]> Modifier</a></td>";
             }  
         ?>
         </tr>
