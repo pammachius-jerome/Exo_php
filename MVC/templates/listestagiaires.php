@@ -22,6 +22,9 @@ ob_start();
             }  
         ?>
         </tr>
+        <tr>
+            <td class="colajout" colspan="5"><a href="index.php?action=vue_ajouter">Ajouter un stagiaire</a></td>
+        </tr>
     </table>
 <?php
 $content = ob_get_clean();

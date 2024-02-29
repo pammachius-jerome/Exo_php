@@ -15,16 +15,30 @@ function supprimer_stagiaire($id){
 }
 // fonction qui génère une vue de la modification d'un stagiaire
 function vue_modifier_stagiaire($id){
-    require "templates/modifierstagiaire.php";
+    $_GET["id"] = $id;
+    require "templates/modifier_stagiaire.php";
 
 }
 
 // fonction pour modifier un tuple
-function modifier_stagiaire($id){
-    update_stagiaire_by_id($id);
+function modifier_stagiaire($id, $login_membre, $nom_membre){
+    update_stagiaire_by_id($id, $login_membre, $nom_membre);
     $stagiaires = get_all_stagiaires();
     require "templates/listestagiaires.php";
 }
+
+// fonction qui génrère une vue de l'ajout d'un stagiaire
+function vue_ajouter_stagiaire(){
+    require "templates/ajouter_stagiaire.php";
+}
+
+// fonction pour ajouter un tuple
+function ajouter_stagiaire($nom_membre, $login_membre){
+    insert_stagiaire($nom_membre, $login_membre);
+    $stagiaires = get_all_stagiaires();
+    require "templates/listestagiaires.php";
+}
+
 
 // Affiche une erreur dans une vue erreur.php 
 // qui centralise toutes les levées d'Exceptions 
